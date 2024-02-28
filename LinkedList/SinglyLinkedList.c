@@ -73,7 +73,7 @@ NODE *insertion_end(NODE *start, int data)
 
     if (ptr == NULL)
     {
-        insertion_front(start, data);
+        return new;
     }
 
     while (ptr->next != NULL)
