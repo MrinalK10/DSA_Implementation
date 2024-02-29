@@ -67,6 +67,8 @@ int main(){
 
     printEdge(graph);
 
+    freegraph(graph);
+
 
 
 
