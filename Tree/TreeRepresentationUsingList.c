@@ -26,17 +26,16 @@ NODE* createNode(int data){
 
 NODE* maketree(int data){
     NODE* root = createNode(data);
-    root->data = data;
     return root;
 }
 
 NODE* insert(NODE* root, int data){
 
-    NODE* newNode = createNode(data);
-
     if(root==NULL){
-        return newNode;
+        return maketree(data);
     }
+
+    NODE* newNode = createNode(data);
 
     NODE* queue[SIZE];
     int front=0;

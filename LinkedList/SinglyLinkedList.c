@@ -96,7 +96,7 @@ NODE *insertion_position(NODE *start, int data, int pos)
 
     if (pos == 1)
     {
-        insertion_front(start, data);
+        return insertion_front(start, data);
     }
 
     if (pos < 1)
