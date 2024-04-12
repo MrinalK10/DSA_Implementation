@@ -102,6 +102,40 @@ int searchItem2(NODE* root, int data){
     return 0;
 }
 
+NODE* findLargestNode(NODE* root){
+    if (root == NULL) return root;
+
+    if(root->right) return findLargestNode(root->right);
+    else return root;
+}
+
+NODE* delete(NODE* root, int item){
+    if(root == NULL) {
+        printf("Item not found in tree\n"); 
+        return root;
+    }
+
+    if(item < root->data) root->left = delete(root->left,item);
+    else if(item > root->data) root->right = delete(root->right,item);
+    else{
+        if(root->left && root->right){
+            NODE* temp = findLargestNode(root->right);
+            root->data = temp->data;
+            root->right = delete(root->right,temp->data);
+
+        }
+        else{
+            NODE* temp = root;
+            if(root->left==NULL && root->right==NULL) root = NULL;
+            else if(root->left!=NULL) root = root->left;
+            else root = root->right;
+            free(temp);
+        }
+    }
+
+    return root;
+}
+
 
 
 
@@ -129,6 +163,15 @@ int main(){
     int data =60;
     if(searchItem2(root,data)) printf("%d Present in the tree\n",data);
     else printf("%d Not present in the tree\n",data);
+
+    root = delete(root,data);
+
+    
+
+    if(searchItem2(root,data)) printf("%d Present in the tree\n",data);
+    else printf("%d Not present in the tree\n",data);
+
+    
     
 
     inorder(root);
