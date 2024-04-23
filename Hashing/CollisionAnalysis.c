@@ -30,12 +30,7 @@ int folding_method(int input){
 int mid_square(int input) {
     
     long long result = (long long)input * input;
-
-    
-    if (result < 0)
-        result = -result;
-
-    
+ 
     int size = 0;
     long long temp = result;
     while (temp != 0) {
@@ -114,6 +109,9 @@ int main(){
     printf("Collisions Using multiplication method:%d\n",collision2);
     printf("Collisions Using folding method:%d\n",collision3);
     printf("Collisions Using Mid-Square method:%d\n",collision4);
+
+
+    
 
     
 
