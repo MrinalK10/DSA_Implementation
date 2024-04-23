@@ -97,7 +97,7 @@ int main(){
         hash4[i]=0;
     }
 
-    for (int i = 0; i < sizeof(inputs) / sizeof(inputs[0]); i++) {
+    for (int i = 0; i < SIZE; i++) {
         int input = inputs[i];
         int hash_val1 = division_remainder(input);
         int hash_val2 = multiplication_method(input);
