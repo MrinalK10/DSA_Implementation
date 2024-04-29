@@ -40,7 +40,7 @@ int mid_square(int input) {
     int middleIndex = 0;
 
     if(size%2!=0){
-     middleIndex = ((size - 1) / 2);
+        middleIndex = ((size - 1) / 2);
     }
     else{
         middleIndex = ((size - 1) / 2)+1;
