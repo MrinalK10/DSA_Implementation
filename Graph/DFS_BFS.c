@@ -100,16 +100,17 @@ void bfs(GRAPH* graph,int vertex){
     QUEUE[rear++]=vertex;
 
     while(front!=rear){
-        
+        int currentVertex = QUEUE[front++];
+        printf("%d-",currentVertex);
         for(int i=0;i<graph->numVertices;i++){
-            if(graph->visited[i]==0 && graph->adjacencyMatrix[vertex][i]==1){
+            if(graph->visited[i]==0 && graph->adjacencyMatrix[currentVertex][i]==1){
                 QUEUE[rear++]=i;
                 graph->visited[i]=1;
             }
             
         }
 
-        printf("%d-",QUEUE[front++]);
+        
         
     }
 
@@ -132,11 +133,16 @@ void bfsTraversal(GRAPH* graph){
 
 int main(){
 
-    GRAPH* graph =createGraph(4);
+    GRAPH* graph =createGraph(8);
 
-    addEdge(graph,0,2);
-    addEdge(graph,1,2);
-    addEdge(graph,2,3);
+    addEdge(graph,0,4);
+    addEdge(graph,4,6);
+    addEdge(graph,6,2);
+    addEdge(graph,6,5);
+    addEdge(graph,6,7);
+    addEdge(graph,5,7);
+    addEdge(graph,2,1);
+    addEdge(graph,3,1);
    
     // printEdge(graph);
 
